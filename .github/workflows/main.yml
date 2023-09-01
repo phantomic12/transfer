@@ -1,0 +1,26 @@
+on: 
+  workflow_dispatch:
+      inputs:
+        cmd:
+          description: rclone command
+          required: true
+          type: string
+        src:
+          description: source
+          required: true
+          type: string
+        dest:
+          description: source
+          required: true
+          type: string      
+jobs:
+ rclone:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: rclone
+      uses: wei/rclone@latest
+      env:
+        RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+      with:
+        args: ${{ inputs.cmd }} ${{ inputs.src }} ${{ inputs.dest }}
