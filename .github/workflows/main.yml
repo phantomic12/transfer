@@ -23,4 +23,4 @@ jobs:
       env:
         RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
       with:
-        args: ${{ inputs.cmd }} ${{ inputs.src }} ${{ inputs.dest }} --progress-one-line
+        args: ${{ inputs.cmd }} ${{ inputs.src }} ${{ inputs.dest }} --stats-one-line
