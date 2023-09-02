@@ -10,7 +10,7 @@ on:
           required: true
           type: string
         dest:
-          description: source
+          description: destination
           required: true
           type: string      
 jobs:
