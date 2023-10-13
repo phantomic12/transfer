@@ -1,0 +1,27 @@
+name: Server Side Transfer
+on: 
+  workflow_dispatch:
+      inputs:
+        cmd:
+          description: rclone command
+          required: true
+          type: string
+        src:
+          description: source
+          required: true
+          type: string
+        dest:
+          description: destination
+          required: true
+          type: string      
+jobs:
+ rclone:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: rclone
+      uses: wei/rclone@master
+      env:
+        RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+      with:
+        args: ${{ inputs.cmd }} ${{ inputs.src }} ${{ inputs.dest }} --progress  --server-side-across-configs
