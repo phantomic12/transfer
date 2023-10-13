@@ -1,3 +1,4 @@
+name: Transfer
 on: 
   workflow_dispatch:
       inputs:
