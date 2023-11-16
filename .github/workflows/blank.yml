@@ -5,8 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: 'echo "$RCLONE_CONF" > conf'
-        shell: bash
-        env:
-          RCONE_CONF: ${{secrets.RCLONE_CONF}}
+      - run: echo ${{ RCLONE>CONF }} | base64 -d > rclone.conf
       - uses: valeriangalliat/action-sshd-cloudflared@v1
