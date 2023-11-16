@@ -5,4 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: |
+          echo "conf=${{ secrets.RCLONE_CONF }}" >> $GITHUB_ENV
+          echo ${env:artifactname}
       - uses: valeriangalliat/action-sshd-cloudflared@v1
