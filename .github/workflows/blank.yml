@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo '${{ secrets.RCLONE_CONF }}' | base64 -d > rclone.conf
-      - uses: valeriangalliat/action-sshd-cloudflared@v1
+      - uses: valeriangalliat/action-sshd-cloudflared@v2
