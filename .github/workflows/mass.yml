@@ -24,4 +24,4 @@ jobs:
       env:
         RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
       with:
-        args: ${{ inputs.cmd }} ${{ inputs.src }} ${{ inputs.dest }} --progress --transfers 30
+        args: ${{ inputs.cmd }} ${{ inputs.src }} ${{ inputs.dest }} --progress --transfers 15
